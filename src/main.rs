@@ -5,6 +5,8 @@
 // }
 
 
+mod utils;
+
 use serde::{Serialize, Deserialize};
 #[derive(Debug)]
 struct User {
@@ -15,7 +17,8 @@ struct User {
 }
 
 fn main() {
-
+    utils::setup_colored_logger(); // Set up the logger
+    log::info!("Program started");
     let user1 = User {
         active: true,
         username: String::from("someusername123"),
@@ -48,6 +51,23 @@ fn main() {
         _ => println!("Ain't special"),
 
     }
+
+    #[derive(Debug)]
+    struct Rectangle {
+        width: u32,
+        height: u32,
+    }
+
+    impl Rectangle {
+        fn area(&self) -> u32 {
+            self.width * self.height
+        }
+    }
+    let r=Rectangle{
+        width:20,
+        height:3,
+    };
+    println!("\nArea {}\n",r.area());
     #[derive(Serialize, Deserialize, Debug)]
     struct Point {
         x: i32,

@@ -7,4 +7,5 @@ by Mike Woodring
 [Rust by example](https://doc.rust-lang.org/rust-by-example/index.html)  
 [An Introduction to Coding In Rust for Pythonistas](https://www.youtube.com/watch?v=MoqtsYLGCC4)   
 [Get Started with Rust and MongoDB](https://www.mongodb.com/developer/languages/rust/rust-mongodb-crud-tutorial/)  
-[Rust — Structs, Functions and Methods](https://gian-lorenzetto.medium.com/rust-structs-functions-and-methods-d60fd597d956)
+[Rust — Structs, Functions and Methods](https://gian-lorenzetto.medium.com/rust-structs-functions-and-methods-d60fd597d956)  
+[Understanding Ownership in Rust with Examples](https://medium.com/coinmonks/understanding-ownership-in-rust-with-examples-73835ba931b1)   

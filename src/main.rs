@@ -5,11 +5,49 @@
 // }
 
 
-
-
 use serde::{Serialize, Deserialize};
+#[derive(Debug)]
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
 fn main() {
 
+    let user1 = User {
+        active: true,
+        username: String::from("someusername123"),
+        email: String::from("someone@example.com"),
+        sign_in_count: 1,
+    };
+
+    println!("{:?}",user1);
+
+    // Use the fields in a meaningful way
+    println!("User info:");
+    println!("Active: {}", user1.active);
+    println!("Username: {}", user1.username);
+    println!("Email: {}", user1.email);
+    println!("Sign-in count: {}", user1.sign_in_count);
+
+    let number = 5;
+
+
+    println!("Tell me about {}", number);
+    match number {
+        // Match a single value
+        1 => println!("One!"),
+        // Match several values
+        2 | 3 | 5 | 7 | 11 => println!("This is a prime"),
+
+        // Match an inclusive range
+        13..=19 => println!("A teen"),
+        // Handle the rest of cases
+        _ => println!("Ain't special"),
+
+    }
     #[derive(Serialize, Deserialize, Debug)]
     struct Point {
         x: i32,
@@ -63,10 +101,17 @@ fn main() {
     println!("={}",sum);
 
     let numbers =(1..11)
+        .filter(|n| *n > 8)
         .inspect(|n|println!("n= {}",n));
+
 
 // Use `numbers` for further operations, e.g.,
     let sum:i32 = numbers.sum();
     println!("The sum of numbers is: {}", sum);
 
+    let t=(1..13)
+        .filter(|n| n%2 ==0)
+        .inspect(|n|println!("n= {}",n))
+        .fold(0,|tally , n| tally+n);
+    println!("sum iterator ={}", t);
 }

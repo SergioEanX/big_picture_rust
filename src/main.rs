@@ -61,4 +61,12 @@ fn main() {
         .inspect(|n|print!("{}",n))
         .sum::<i32>();
     println!("={}",sum);
+
+    let numbers =(1..11)
+        .inspect(|n|println!("n= {}",n));
+
+// Use `numbers` for further operations, e.g.,
+    let sum:i32 = numbers.sum();
+    println!("The sum of numbers is: {}", sum);
+
 }

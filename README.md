@@ -49,11 +49,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 [References and Borrowing](https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html)
 
 ### Async in Rust using TOKIO
-Build reliable network applications without compromising speed.   
+Build reliable network applications without compromising speed.    
+
+[<img src="https://i.ytimg.com/vi/dOzrO40jgbU/maxresdefault.jpg" width="200">](https://www.youtube.com/watch?v=dOzrO40jgbU)       
 [A practical guide to async in Rust](https://blog.logrocket.com/a-practical-guide-to-async-in-rust/)   
 
 
 ### Actix web framework
+[<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*IuiMDaNxT6FVLyzHH8lqiA.png" width="250">](https://actix.rs/docs/getting-started)    
+
 [Actix](https://actix.rs/docs/getting-started)   
 [Actix Web: The Ultimate Guide (2023)](https://masteringbackend.com/posts/actix-web-the-ultimate-guide#complete-actix-overview)   
 

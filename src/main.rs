@@ -75,10 +75,14 @@ fn add_message_passing(n1:i32,n2:i32)->i32{
     }
     sum
 }
-
+use crate::utils::add;
 fn main() {
     // utils::setup_colored_logger(); // Set up the logger
     log::info!("Program started");
+
+    let result = add(5, 3);
+    println!("The sum is: {}", result);
+
 
     println!(" Sum using add2: {}",add2(4,5));
 

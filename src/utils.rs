@@ -9,7 +9,7 @@ pub fn add(x: i32, y: i32) -> i32 {
 
 
 
-use log::{debug, error, info, trace, warn};
+
 
 pub fn setup_logger() -> Result<(), fern::InitError> {
     fern::Dispatch::new()

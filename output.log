@@ -1,1 +1,12 @@
 [2024-02-25T09:34:29Z INFO hello_world] Hello, world!
+[2024-02-25T09:36:00Z INFO hello_world] Hello, world!
+[2024-02-25T09:36:25Z INFO hello_world] Hello, world!
+[2024-02-25T09:40:00Z INFO hello_world] Hello, world!
+[2024-02-25T09:42:34Z INFO hello_world] Logger initialized successfully
+[2024-02-25T09:42:34Z INFO hello_world] Hello, world!
+[2024-02-25T09:43:22Z INFO hello_world] Logger initialized successfully
+[2024-02-25T09:43:22Z INFO hello_world] App started!
+[2024-02-25T09:43:22Z DEBUG hello_world] Exiting...
+[2024-02-25T09:47:30Z INFO hello_world] Logger initialized successfully
+[2024-02-25T09:47:30Z INFO hello_world] App started!
+[2024-02-25T09:47:30Z DEBUG hello_world] Exiting...

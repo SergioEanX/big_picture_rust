@@ -11,7 +11,7 @@
 use std::sync::{Arc, mpsc};
 use std::sync::atomic::{AtomicI32, Ordering};
 use std::thread;
-use log::info;
+use log::{debug, info};
 use serde::{Serialize, Deserialize};
 #[derive(Debug)]
 struct User {
@@ -80,10 +80,19 @@ fn add_message_passing(n1:i32,n2:i32)->i32{
 mod utils;
 use crate::utils::add;
 use crate::utils::setup_logger;
+
 fn main() {
     // utils::setup_colored_logger(); // Set up the logger
-    setup_logger();
-    info!("Hello, world!");
+    // Call the setup_logger function before using logging
+    match setup_logger() {
+        Ok(_) => log::info!("Logger initialized successfully"),
+        Err(err) => {
+            // Handle the error gracefully (e.g., print an error message or exit)
+            eprintln!("Error setting up logger: {}", err);
+            return;
+        }
+    }
+    info!("App started!");
 
     let result = add(5, 3);
     println!("The sum is: {}", result);
@@ -209,4 +218,6 @@ fn main() {
         .inspect(|n|println!("n= {}",n))
         .fold(0,|tally , n| tally+n);
     println!("sum iterator ={}", t);
+    debug!("Exiting...")
+
 }

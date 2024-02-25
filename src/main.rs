@@ -78,7 +78,7 @@ fn add_message_passing(n1:i32,n2:i32)->i32{
     sum
 }
 mod utils;
-use crate::utils::add;
+use crate::utils::{add, get_polars_df};
 use crate::utils::setup_logger;
 
 fn main() {
@@ -218,6 +218,9 @@ fn main() {
         .inspect(|n|println!("n= {}",n))
         .fold(0,|tally , n| tally+n);
     println!("sum iterator ={}", t);
+
+    // show polars dataframe
+    get_polars_df();
     debug!("Exiting...")
 
 }

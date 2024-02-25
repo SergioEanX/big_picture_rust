@@ -7,6 +7,9 @@
 
 mod utils;
 
+use std::sync::{Arc, mpsc};
+use std::sync::atomic::{AtomicI32, Ordering};
+use std::thread;
 use serde::{Serialize, Deserialize};
 #[derive(Debug)]
 struct User {
@@ -16,9 +19,72 @@ struct User {
     sign_in_count: u64,
 }
 
+fn add2(n1:i32,n2:i32)->i32{
+    let mut sum =n1;
+    let (count, increment)= if n2>0 {(n2,1)}else{(-n2,-1)};
+    for _ in 0..count{
+        sum+=increment;
+    }
+    sum
+}
+
+fn add_multithread(n1:i32,n2:i32)->i32{
+    let  sum = Arc::new(AtomicI32::new(n1));
+    let (count, increment)= if n2>0 {(n2,1)}else{(-n2,-1)};
+
+    let mut handles =vec![];
+
+    for _ in 0..count{
+        let inner_sum =Arc::clone(&sum);
+        handles.push(
+            thread::spawn(move ||{
+                // sum+=increment;
+                inner_sum.fetch_add(increment,Ordering::SeqCst);
+            })
+        );
+
+    }
+    for handle in handles{
+        handle.join().unwrap();
+    }
+    sum.load(Ordering::SeqCst)
+}
+
+fn add_message_passing(n1:i32,n2:i32)->i32{
+    let  mut sum =n1;
+    let (count, increment)= if n2>0 {(n2,1)}else{(-n2,-1)};
+
+    let (tx,rx)=mpsc::channel();
+
+    let mut handles =vec![];
+
+    for _ in 0..count{
+        let tx_for_thread =tx.clone();
+        handles.push(
+            thread::spawn(move ||{
+                tx_for_thread.send(increment).unwrap();
+            })
+        );
+
+    }
+    for handle in handles{
+        handle.join().unwrap();
+    }
+    for _ in 0..count {
+        sum+=rx.recv().unwrap();
+    }
+    sum
+}
+
 fn main() {
-    utils::setup_colored_logger(); // Set up the logger
+    // utils::setup_colored_logger(); // Set up the logger
     log::info!("Program started");
+
+    println!(" Sum using add2: {}",add2(4,5));
+
+    println!(" Sum using add_multithread: {}",add_multithread(4,10));
+
+    println!(" Sum using add_multithread_message_passing: {}",add_message_passing(5,5));
     let user1 = User {
         active: true,
         username: String::from("someusername123"),

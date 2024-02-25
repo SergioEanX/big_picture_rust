@@ -22,6 +22,10 @@ by Mike Woodring
 [A Guide to Rust’s Fearless Concurrency](https://www.makeuseof.com/rust-fearless-concurrency-guide/)
 [Journey to Fearless Concurrency: Rust vs. Go](https://medium.com/@AlexanderObregon/journey-to-fearless-concurrency-rust-vs-go-31d49255d6b6)   
 
+### Rust cargo
+[Rust cargo intro](https://www.programiz.com/rust/cargo)   
+[Demystifying Cargo in Rust](https://blog.logrocket.com/demystifying-cargo-in-rust/)   
+
 
 ### Rust for absolutely beginners...   
 [Rust for beginners — Part 1 — Introduction and Installation](https://medium.com/@manikandan96372/rust-for-beginners-part-1-introduction-and-installation-76e80624930c)   
@@ -38,9 +42,21 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 [Rust for beginners — Part 9 — Struct](https://medium.com/@manikandan96372/rust-for-beginners-part-9-struct-a1e6a0797b23)      
 [Rust for beginners — Part 10 — Enums](https://medium.com/@manikandan96372/rust-for-beginners-part-10-enums-58fcdadbfd98)   
 
+[Rust essentials (online BOOK)](https://masteringbackend.com/hubs/rust-essentials)   
+
 ### Brown University Computer Science 
 #### (Rust Book online)
 [References and Borrowing](https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html)
+
+### Async in Rust using TOKIO
+Build reliable network applications without compromising speed.   
+[A practical guide to async in Rust](https://blog.logrocket.com/a-practical-guide-to-async-in-rust/)   
+
+
+### Actix web framework
+[Actix](https://actix.rs/docs/getting-started)   
+[Actix Web: The Ultimate Guide (2023)](https://masteringbackend.com/posts/actix-web-the-ultimate-guide#complete-actix-overview)   
+
 
 ### Rust Polars for data analytics
 [Rust Polars: Unlocking High-Performance Data Analysis — Part 1](https://towardsdatascience.com/rust-polars-unlocking-high-performance-data-analysis-part-1-ce42af370ece)   

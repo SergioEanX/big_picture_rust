@@ -5,11 +5,13 @@
 // }
 
 
-mod utils;
+
+
 
 use std::sync::{Arc, mpsc};
 use std::sync::atomic::{AtomicI32, Ordering};
 use std::thread;
+use log::info;
 use serde::{Serialize, Deserialize};
 #[derive(Debug)]
 struct User {
@@ -75,10 +77,13 @@ fn add_message_passing(n1:i32,n2:i32)->i32{
     }
     sum
 }
+mod utils;
 use crate::utils::add;
+use crate::utils::setup_logger;
 fn main() {
     // utils::setup_colored_logger(); // Set up the logger
-    log::info!("Program started");
+    setup_logger();
+    info!("Hello, world!");
 
     let result = add(5, 3);
     println!("The sum is: {}", result);

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/utils.rs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1708855334347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1708855378441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         .format(|out, message, record| {\n             out.finish(format_args!(\n                 \"{}{} [{} {}] {}\",\n                 colors.color(record.level()),\n-                format!(\"{}\", colors.color(fern::colors::Color::Cyan)),\n+                format!(\"{}\", colors.color(fern::colors::Level::Trace)), // Fix: Pass Level::Trace instead of Color::Cyan\n                 humantime::format_rfc3339_seconds(SystemTime::now()),\n                 record.target(),\n                 message\n             ))\n"
+                },
+                {
+                    "date": 1708855400562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         .format(|out, message, record| {\n             out.finish(format_args!(\n                 \"{}{} [{} {}] {}\",\n                 colors.color(record.level()),\n-                format!(\"{}\", colors.color(fern::colors::Level::Trace)), // Fix: Pass Level::Trace instead of Color::Cyan\n+                format!(\"{}\", colors.color(log::Level)), // Fix: Pass Level::Trace instead of Color::Cyan\n                 humantime::format_rfc3339_seconds(SystemTime::now()),\n                 record.target(),\n                 message\n             ))\n"
+                },
+                {
+                    "date": 1708855417722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         .format(|out, message, record| {\n             out.finish(format_args!(\n                 \"{}{} [{} {}] {}\",\n                 colors.color(record.level()),\n-                format!(\"{}\", colors.color(log::Level)), // Fix: Pass Level::Trace instead of Color::Cyan\n+                format!(\"{}\", colors.color(log::Level::Trace)), // Fix: Pass Level::Trace instead of Color::Cyan\n                 humantime::format_rfc3339_seconds(SystemTime::now()),\n                 record.target(),\n                 message\n             ))\n"
+                },
+                {
+                    "date": 1708855465623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         .debug(Color::Magenta)\n         .trace(Color::Cyan);\n \n     fern::Dispatch::new()\n-        .format(|out, message, record| {\n+        .format(move|out, message, record| {\n             out.finish(format_args!(\n                 \"{}{} [{} {}] {}\",\n                 colors.color(record.level()),\n                 format!(\"{}\", colors.color(log::Level::Trace)), // Fix: Pass Level::Trace instead of Color::Cyan\n"
+                },
+                {
+                    "date": 1708855641983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         .format(move |out, message, record| {\n             out.finish(format_args!(\n                 \"{}{} [{} {}] {}\",\n                 colors.color(record.level()),\n-                format!(\"{}\",colors.info()), // colors.color(log::Level::Debug)\n+                colors.color(log::Level::Debug),\n                 humantime::format_rfc3339_seconds(SystemTime::now()),\n                 record.target(),\n                 message\n             ))\n"
+                }
+            ],
+            "date": 1708855334347,
+            "name": "Commit-0",
+            "content": "\nuse std::time::SystemTime;\nuse humantime;\nuse log::LevelFilter;\n\n\nuse fern::colors::{Color, ColoredLevelConfig};\npub fn add(x: i32, y: i32) -> i32 {\n    x + y\n}\n\n\n\n\n\n\n\npub fn setup_logger() -> Result<(), fern::InitError> {\n    // fern::Dispatch::new()\n    //     .format(|out, message, record| {\n    //         out.finish(format_args!(\n    //             \"[{} {} {}] {}\",\n    //             humantime::format_rfc3339_seconds(SystemTime::now()),\n    //             record.level(),\n    //             record.target(),\n    //             message\n    //         ))\n    //     })\n    //     .level(log::LevelFilter::Debug)\n    //     .chain(std::io::stdout())\n    //     .chain(fern::log_file(\"output.log\")?)\n    //     .apply()?;\n    // Ok(())\n    let colors = ColoredLevelConfig::new()\n        .error(Color::Red)\n        .warn(Color::Yellow)\n        .info(Color::Green)\n        .debug(Color::Magenta)\n        .trace(Color::Cyan);\n\n\n    fern::Dispatch::new()\n        .format(|out, message, record| {\n            out.finish(format_args!(\n                \"{}{} [{} {}] {}\",\n                colors.color(record.level()),\n                format!(\"{}\", colors.color(fern::colors::Color::Cyan)),\n                humantime::format_rfc3339_seconds(SystemTime::now()),\n                record.target(),\n                message\n            ))\n        })\n        .level(LevelFilter::Debug)\n        .chain(std::io::stdout())\n        .apply()?;\n    Ok(())\n}"
+        }
+    ]
+}

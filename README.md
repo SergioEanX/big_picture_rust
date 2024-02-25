@@ -49,8 +49,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 [References and Borrowing](https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html)
 
 ### Async in Rust using TOKIO
-Build reliable network applications without compromising speed.    
+Build reliable network applications without compromising speed.   
 
+Quick video intro (to watch!)   
 [<img src="https://i.ytimg.com/vi/dOzrO40jgbU/maxresdefault.jpg" width="200">](https://www.youtube.com/watch?v=dOzrO40jgbU)       
 [A practical guide to async in Rust](https://blog.logrocket.com/a-practical-guide-to-async-in-rust/)   
 

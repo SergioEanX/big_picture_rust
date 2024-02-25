@@ -3,17 +3,20 @@ Code inspired by "Rust: The Big Picture"
 by Mike Woodring
 
 ## Useful resources
-[Top Rust Libraries and Crates You Should Know](https://medium.com/@AlexanderObregon/top-rust-libraries-and-crates-you-should-know-e2a854c9679a)   
-[Rust by example](https://doc.rust-lang.org/rust-by-example/index.html)  
 [An Introduction to Coding In Rust for Pythonistas](https://www.youtube.com/watch?v=MoqtsYLGCC4)   
-[Get Started with Rust and MongoDB](https://www.mongodb.com/developer/languages/rust/rust-mongodb-crud-tutorial/)  
+[Rust by example](https://doc.rust-lang.org/rust-by-example/index.html)  
 [Rust — Structs, Functions and Methods](https://gian-lorenzetto.medium.com/rust-structs-functions-and-methods-d60fd597d956)  
 [Understanding Ownership in Rust with Examples](https://medium.com/coinmonks/understanding-ownership-in-rust-with-examples-73835ba931b1)   
+
+[Top Rust Libraries and Crates You Should Know](https://medium.com/@AlexanderObregon/top-rust-libraries-and-crates-you-should-know-e2a854c9679a)   
+
 [Ownership in Rust, Part 1](https://medium.com/@thomascountz/ownership-in-rust-part-1-112036b1126b)   
 [Ownership in Rust, Part 2](https://medium.com/@thomascountz/ownership-in-rust-part-2-c3e1da89956e)   
+
 [Rust Concurrency in Practice](https://medium.com/dev-genius/rust-concurrency-in-practice-720ec7747827)
 [Rust Mutex: From Basics to Advanced Techniques](https://medium.com/@TechSavvyScribe/rust-mutex-from-basics-to-advanced-techniques-56e1f1389d9b)   
 
+[Get Started with Rust and MongoDB](https://www.mongodb.com/developer/languages/rust/rust-mongodb-crud-tutorial/)  
 
 
 [A Guide to Rust’s Fearless Concurrency](https://www.makeuseof.com/rust-fearless-concurrency-guide/)
@@ -34,6 +37,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 [Rust for beginners — Part 8 — &str](https://medium.com/@manikandan96372/rust-for-beginners-part-8-str-6ce56c02ca88)
 [Rust for beginners — Part 9 — Struct](https://medium.com/@manikandan96372/rust-for-beginners-part-9-struct-a1e6a0797b23)      
 [Rust for beginners — Part 10 — Enums](https://medium.com/@manikandan96372/rust-for-beginners-part-10-enums-58fcdadbfd98)   
+
+### Brown University Computer Science 
+#### (Rust Book online)
+[References and Borrowing](https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html)
 
 ### Rust Polars for data analytics
 [Rust Polars: Unlocking High-Performance Data Analysis — Part 1](https://towardsdatascience.com/rust-polars-unlocking-high-performance-data-analysis-part-1-ce42af370ece)   
